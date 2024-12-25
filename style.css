@@ -1,0 +1,719 @@
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poiret One", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Yeseva One", sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+header {
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 6rem;
+  width: 100%;
+}
+
+nav a {
+  position: relative;
+  font-size: 1.3em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.buttons-nav a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.buttons-nav a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.buttons-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45rem;
+}
+
+.line-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.line-box img {
+  height: 1.2px;
+  margin-top: 80px;
+}
+
+#hero .container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+#hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("img/TitlePage.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+}
+
+#hero h1 {
+  font-size: 4rem;
+}
+
+#hero .description {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+#hero a {
+  position: relative;
+  padding: 25px 80px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.2em;
+  font-size: 1.5em;
+  border: 2px solid transparent;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+#hero a:hover {
+  border: 2px solid #fff;
+}
+
+#hero a::before {
+  content: "";
+  position: absolute;
+  inset: 0 8px;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+#hero a::after {
+  content: "";
+  position: absolute;
+  inset: 8px 0;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+#hero a.btn:hover::before {
+  inset: 0px -12px;
+  transform: skewY(15deg);
+  -webkit-transform: skewY(15deg);
+  -moz-transform: skewY(15deg);
+  -ms-transform: skewY(15deg);
+  -o-transform: skewY(15deg);
+}
+
+#hero a.btn:hover::after {
+  inset: -12px 0px;
+  transform: skewX(15deg);
+  -webkit-transform: skewX(15deg);
+  -moz-transform: skewX(15deg);
+  -ms-transform: skewX(15deg);
+  -o-transform: skewX(15deg);
+}
+
+#projects {
+  padding-top: 80px;
+  background-color: #f5f5f5;
+}
+
+#projects .container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+#projects .card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#projects .card-reverse {
+  position: relative;
+  flex-direction: row-reverse;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#projects .card-img {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+#projects .card-img img {
+  width: 100%;
+  height: 350px;
+  transition: 1.5s ease-in-out;
+  display: block;
+  object-fit: cover;
+}
+
+#projects .card-img img:hover {
+  transform: scale(1.1);
+}
+
+#projects .card-info {
+  width: 45%;
+  height: auto;
+  text-align: center;
+}
+
+#projects .card-info h3 {
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+}
+
+#projects .card-info .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+  text-decoration: none;
+  color: #000000;
+  font-size: 1rem;
+  transition: background 0.8s;
+}
+
+#projects .card-info .btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+#projects .card-skills {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.1rem;
+}
+
+#projects .card-skills-reverse {
+  position: absolute;
+  bottom: 0px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.1rem;
+}
+
+#about .container {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: #f5f5f5;
+}
+
+#about img {
+  border-radius: 50%;
+  margin-bottom: 25px;
+  width: 75%;
+}
+
+#about .about-me-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#about .avatar-info {
+  height: fit-content;
+  width: 49%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#about .avatar-info p {
+  font-size: 1.6rem;
+}
+
+#about .info-about {
+  height: fit-content;
+  width: 51%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#about p,
+#about span {
+  font-size: 20px;
+  font-family: "Cormorant Garamond", sans-serif;
+}
+
+#about span {
+  font-weight: bolder;
+}
+
+#about .link-icons {
+  margin-top: 15px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#about .link-icons img {
+  border-radius: 15%;
+  width: 100%;
+}
+
+#about .link-icons a {
+  border-radius: 15%;
+  width: 35px;
+  height: 35px;
+}
+
+#about .skills-lang {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#about .skills-info {
+  width: 52%;
+}
+
+#about .lang-info {
+  width: 30%;
+}
+
+#about .skills-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+#contacts {
+  padding-top: 80px;
+  height: 55vh;
+  background-color: #f5f5f5;
+}
+
+#contacts h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 30px;
+}
+
+#contacts p {
+  font-size: 16px;
+}
+
+#contacts span {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+#contacts label {
+  font-weight: bolder;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#contacts input {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  width: 600px;
+  height: 35px;
+}
+
+#contacts textarea {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  width: 600px;
+  height: 50px;
+  resize: none;
+}
+
+#contacts ::placeholder {
+  font-size: 15px;
+}
+
+#contacts .contact-block {
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+#contacts .contact-info {
+  padding: 13px;
+}
+
+#contacts .contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contacts button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  background-color: #f5f5f5;
+  transition: background 0.8s;
+  margin-top: 20px;
+}
+
+#contacts button:hover {
+  background: #000;
+  color: #fff;
+}
+
+#contacts .love-msg {
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
+  margin-bottom: 15px;
+}
+
+#contacts .love-msg p {
+  font-size: 20px;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1199px) {
+  body {
+    #hero {
+      height: 75vh;
+    }
+
+    .line-box {
+      width: 100%;
+    }
+
+    #projects .card-img img {
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  body {
+    #hero {
+      height: 60vh;
+    }
+    .line-box {
+      width: 100%;
+    }
+
+    #projects .card-img img {
+      height: 250px;
+    }
+    #projects .card-info h3 {
+      font-size: 1.5rem;
+    }
+    #projects .card-info .btn {
+      padding: 8px 16px;
+    }
+
+    #contacts input {
+      width: 450px;
+    }
+    #contacts textarea {
+      width: 450px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    nav {
+      height: 8rem;
+    }
+    nav a {
+      font-size: 1.4em;
+    }
+    .buttons-nav {
+      flex-wrap: wrap;
+      margin-top: 15px;
+      width: 20rem;
+    }
+    .buttons-nav a {
+      padding-top: 10px;
+    }
+
+    #hero {
+      height: 80vh;
+    }
+    #hero h1 {
+      font-size: 2.45rem;
+    }
+    #hero .description {
+      font-size: 1.4rem;
+      margin-bottom: 50px;
+    }
+    #hero a {
+      padding: 25px 60px;
+      font-size: 1.5em;
+    }
+    #projects .card {
+      flex-direction: column;
+    }
+    #projects .card-reverse {
+      flex-direction: column;
+    }
+    #projects .card-skills-reverse {
+      align-items: flex-start;
+      margin-top: 15px;
+      position: relative;
+      width: 100%;
+    }
+    #projects .card-skills {
+      margin-top: 15px;
+      position: relative;
+    }
+    #projects .card-info h3 {
+      font-size: 1.9rem;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+    #projects .card-img {
+      width: 100%;
+    }
+    #projects .card-info {
+      width: 100%;
+    }
+    #projects .card-img img {
+      height: 300px;
+    }
+    #projects .card-info .btn {
+      padding: 12px 28px;
+      font-size: 1.2rem;
+    }
+    #about img {
+      width: 100%;
+    }
+    #about .about-me-container {
+      flex-direction: column;
+    }
+    #about .avatar-info {
+      width: 100%;
+    }
+    #about .avatar-info h2 {
+      font-size: 2.3rem;
+    }
+    #about .avatar-info p {
+      font-size: 1.9rem;
+    }
+    #about .link-icons {
+      margin-top: 20px;
+      width: 450px;
+    }
+    #about .link-icons a {
+      width: 55px;
+      height: 55px;
+    }
+    #about .info-about {
+      width: 100%;
+      margin-top: 20px;
+    }
+    #about h2 {
+      font-size: 1.9rem;
+    }
+    #about p,
+    #about span {
+      font-size: 30px;
+    }
+    #contacts .contact-block {
+      flex-direction: column-reverse;
+    }
+    #contacts p {
+      font-size: 20px;
+    }
+    #contacts span {
+      font-size: 20px;
+    }
+    #contacts input {
+      height: 45px;
+    }
+    #contacts textarea {
+      height: 65px;
+    }
+    #contacts ::placeholder {
+      font-size: 20px;
+    }
+    #contacts button {
+      padding: 15px 30px;
+    }
+    #contacts .love-msg {
+      display: flex;
+      justify-content: center;
+      margin-top: 75px;
+      margin-bottom: 20px;
+    }
+    #contacts .love-msg p {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    #hero {
+      height: 100vh;
+    }
+    #hero h1 {
+      font-size: 2.07rem;
+    }
+    #hero .description {
+      font-size: 1.37rem;
+      margin-bottom: 60px;
+    }
+    #hero a {
+      padding: 25px 50px;
+      font-size: 1.4em;
+    }
+    #projects .card-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+    #about .avatar-info h2 {
+      font-size: 2rem;
+    }
+    #about .link-icons {
+      margin-top: 20px;
+      width: 400px;
+    }
+    #about .link-icons a {
+      width: 45px;
+      height: 45px;
+    }
+    #about h2 {
+      font-size: 1.8rem;
+    }
+    #about p,
+    #about span {
+      font-size: 25px;
+    }
+    #about .skills-block {
+      width: 250px;
+    }
+    #contacts .contact-block {
+      flex-direction: column-reverse;
+    }
+    #contacts p {
+      font-size: 20px;
+    }
+    #contacts span {
+      font-size: 20px;
+    }
+    #contacts input {
+      width: 375px;
+    }
+    #contacts textarea {
+      width: 375px;
+    }
+    #contacts ::placeholder {
+      font-size: 20px;
+    }
+    #contacts button {
+      padding: 15px 30px;
+    }
+    #contacts .love-msg {
+      display: flex;
+      justify-content: center;
+      margin-top: 75px;
+      margin-bottom: 20px;
+    }
+    #contacts .love-msg p {
+      font-size: 20px;
+    }
+  }
+}

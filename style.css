@@ -123,11 +123,11 @@ nav img {
 }
 
 #hero h1 {
-  font-size: 4rem;
+  font-size: clamp(2rem, 6vw, 4rem);
 }
 
 #hero .description {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   margin-bottom: 40px;
 }
 
@@ -138,7 +138,7 @@ nav img {
   text-decoration: none;
   display: inline-block;
   letter-spacing: 0.2em;
-  font-size: 1.5em;
+  font-size: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
   border: 2px solid transparent;
   transition: 0.5s;
   -webkit-transition: 0.5s;
@@ -248,7 +248,7 @@ nav img {
 }
 
 #projects .card-info h3 {
-  font-size: 1.7rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
   margin-bottom: 15px;
 }
 
@@ -317,6 +317,10 @@ nav img {
   align-items: center;
   flex-direction: column;
   text-align: center;
+}
+
+#about .avatar-info h2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
 }
 
 #about .avatar-info p {
@@ -388,12 +392,12 @@ nav img {
 
 #contacts h2 {
   text-align: center;
-  font-size: 1.9rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   margin-bottom: 30px;
 }
 
 #contacts p {
-  font-size: 16px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 #contacts span {
@@ -488,15 +492,9 @@ nav img {
     nav {
       width: 90%;
     }
-
-    #hero {
-      height: 100vh;
-    }
-
     .line-box {
       width: 100%;
     }
-
     #projects .card-img img {
       height: 300px;
     }
@@ -548,25 +546,15 @@ nav img {
     #burger-menu {
       display: flex;
     }
-
     .menu-links a {
       padding: 1rem 0;
       font-size: 1.5rem;
     }
-
-    #hero {
-      height: 100vh;
-    }
-
     .line-box {
       width: 100%;
     }
-
     #projects .card-img img {
       height: 250px;
-    }
-    #projects .card-info h3 {
-      font-size: 1.5rem;
     }
     #projects .card-info .btn {
       padding: 8px 16px;
@@ -590,19 +578,11 @@ nav img {
     .menu-links {
       width: 65%;
     }
-    #hero .container {
-      width: 80%;
-    }
-    #hero h1 {
-      font-size: 2.4rem;
-    }
     #hero .description {
-      font-size: 1.5rem;
       margin-bottom: 50px;
     }
     #hero a {
       padding: 25px 60px;
-      font-size: 1.6em;
     }
     #projects .card {
       flex-direction: column;
@@ -623,7 +603,6 @@ nav img {
       font-size: 1.3rem;
     }
     #projects .card-info h3 {
-      font-size: 1.9rem;
       margin-bottom: 15px;
       margin-top: 15px;
     }
@@ -648,9 +627,6 @@ nav img {
     }
     #about .avatar-info {
       width: 100%;
-    }
-    #about .avatar-info h2 {
-      font-size: 2.3rem;
     }
     #about .avatar-info p {
       font-size: 1.9rem;
@@ -679,13 +655,10 @@ nav img {
     }
     #contacts .contact-form {
       justify-content: center;
-      width: fit-content;
+      width: 100%;
     }
     #contacts .contact-block {
       flex-direction: column-reverse;
-    }
-    #contacts p {
-      font-size: 20px;
     }
     #contacts span {
       font-size: 20px;
@@ -726,24 +699,18 @@ nav img {
     .menu-links a {
       font-size: 1.3rem;
     }
-    #hero h1 {
-      font-size: 2.07rem;
+    #hero .container {
+      width: 100%;
     }
     #hero .description {
-      font-size: 1.37rem;
       margin-bottom: 60px;
     }
     #hero a {
-      padding: 25px 50px;
-      font-size: 1.3em;
+      padding: 25px 30px;
     }
     #projects .card-info h3 {
-      font-size: 1.6rem;
       margin-bottom: 15px;
       margin-top: 15px;
-    }
-    #about .avatar-info h2 {
-      font-size: 1.8rem;
     }
     #about .link-icons {
       margin-top: 20px;
@@ -766,17 +733,8 @@ nav img {
     #contacts .contact-block {
       flex-direction: column-reverse;
     }
-    #contacts p {
-      font-size: 20px;
-    }
     #contacts span {
       font-size: 20px;
-    }
-    #contacts input {
-      width: 375px;
-    }
-    #contacts textarea {
-      width: 375px;
     }
     #contacts ::placeholder {
       font-size: 20px;
@@ -807,24 +765,15 @@ nav img {
     #hero .container {
       width: 95%;
     }
-    #hero h1 {
-      font-size: 1.6rem;
-    }
     #hero .description {
-      font-size: 1rem;
       margin-bottom: 30px;
       width: 100%;
     }
     #hero a {
       padding: 15px 35px;
-      font-size: 1em;
     }
     #projects .container {
       width: 90%;
-    }
-    #projects .card-info h3 {
-      width: 100%;
-      font-size: 1.4rem;
     }
     #projects .card-info .btn {
       font-size: 1.3rem;
@@ -837,9 +786,6 @@ nav img {
     }
     #about .container {
       width: 90%;
-    }
-    #about .avatar-info h2 {
-      font-size: 1.5rem;
     }
     #about .link-icons {
       margin-top: 25px;
@@ -866,11 +812,8 @@ nav img {
     #about .skills-info {
       width: 100%;
     }
-    #about .skills-info h2{
+    #about .skills-info h2 {
       width: 80%;
-    }
-    #contacts .container h2 {
-      font-size: 1.6rem;
     }
     #contacts .contact-form {
       justify-content: center;
@@ -891,8 +834,7 @@ nav img {
     #contacts .contact-info {
       padding: 0;
     }
-    #contacts span,
-    #contacts p {
+    #contacts span {
       font-size: 15px;
     }
     #contacts .love-msg p {

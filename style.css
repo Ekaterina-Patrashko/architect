@@ -31,6 +31,9 @@ header {
   z-index: 99;
   position: absolute;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
@@ -48,7 +51,11 @@ nav a {
   text-decoration: none;
 }
 
-.buttons-nav a:after {
+nav img {
+  margin-right: 15px;
+}
+
+.menu-links a:after {
   content: "";
   position: absolute;
   left: 0;
@@ -61,16 +68,25 @@ nav a {
   transition: transform 0.3s;
 }
 
-.buttons-nav a:hover::after {
+.menu-links a:hover::after {
   transform-origin: left;
   transform: scaleX(1);
 }
 
-.buttons-nav {
+.menu-links {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 45rem;
+}
+
+.menu-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.menu-links.open {
+  display: flex;
 }
 
 .line-box {
@@ -469,8 +485,12 @@ nav a {
 
 @media (max-width: 1199px) {
   body {
+    nav {
+      width: 90%;
+    }
+
     #hero {
-      height: 75vh;
+      height: 100vh;
     }
 
     .line-box {
@@ -485,9 +505,59 @@ nav a {
 
 @media (max-width: 991px) {
   body {
-    #hero {
-      height: 60vh;
+    nav {
+      justify-content: space-between;
+      width: 80%;
+      height: 10rem;
     }
+
+    #burger-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      width: 35px;
+      height: 30px;
+    }
+
+    #burger-menu span {
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 7rem;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      width: 50%;
+      padding: 1rem 0;
+      text-align: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-links.open {
+      display: flex;
+    }
+
+    #burger-menu {
+      display: flex;
+    }
+
+    .menu-links a {
+      padding: 1rem 0;
+      font-size: 1.5rem;
+    }
+
+    #hero {
+      height: 100vh;
+    }
+
     .line-box {
       width: 100%;
     }
@@ -502,45 +572,37 @@ nav a {
       padding: 8px 16px;
     }
 
+    #about .skills-info {
+      width: 59%;
+    }
+
     #contacts input {
-      width: 450px;
+      width: 100%;
     }
     #contacts textarea {
-      width: 450px;
+      width: 100%;
     }
   }
 }
 
 @media (max-width: 576px) {
   body {
-    nav {
-      height: 8rem;
+    .menu-links {
+      width: 65%;
     }
-    nav a {
-      font-size: 1.4em;
-    }
-    .buttons-nav {
-      flex-wrap: wrap;
-      margin-top: 15px;
-      width: 20rem;
-    }
-    .buttons-nav a {
-      padding-top: 10px;
-    }
-
-    #hero {
-      height: 80vh;
+    #hero .container {
+      width: 80%;
     }
     #hero h1 {
-      font-size: 2.45rem;
+      font-size: 2.4rem;
     }
     #hero .description {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       margin-bottom: 50px;
     }
     #hero a {
       padding: 25px 60px;
-      font-size: 1.5em;
+      font-size: 1.6em;
     }
     #projects .card {
       flex-direction: column;
@@ -553,10 +615,12 @@ nav a {
       margin-top: 15px;
       position: relative;
       width: 100%;
+      font-size: 1.3rem;
     }
     #projects .card-skills {
       margin-top: 15px;
       position: relative;
+      font-size: 1.3rem;
     }
     #projects .card-info h3 {
       font-size: 1.9rem;
@@ -574,7 +638,7 @@ nav a {
     }
     #projects .card-info .btn {
       padding: 12px 28px;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
     #about img {
       width: 100%;
@@ -604,11 +668,18 @@ nav a {
       margin-top: 20px;
     }
     #about h2 {
-      font-size: 1.9rem;
+      font-size: 2rem;
+    }
+    #about .skills-info {
+      width: 64%;
     }
     #about p,
     #about span {
       font-size: 30px;
+    }
+    #contacts .contact-form {
+      justify-content: center;
+      width: fit-content;
     }
     #contacts .contact-block {
       flex-direction: column-reverse;
@@ -629,7 +700,11 @@ nav a {
       font-size: 20px;
     }
     #contacts button {
+      font-size: 1.5rem;
       padding: 15px 30px;
+    }
+    #contacts label {
+      font-size: 1.3rem;
     }
     #contacts .love-msg {
       display: flex;
@@ -645,8 +720,11 @@ nav a {
 
 @media (max-width: 480px) {
   body {
-    #hero {
-      height: 100vh;
+    .menu-links {
+      width: 70%;
+    }
+    .menu-links a {
+      font-size: 1.3rem;
     }
     #hero h1 {
       font-size: 2.07rem;
@@ -657,7 +735,7 @@ nav a {
     }
     #hero a {
       padding: 25px 50px;
-      font-size: 1.4em;
+      font-size: 1.3em;
     }
     #projects .card-info h3 {
       font-size: 1.6rem;
@@ -665,7 +743,7 @@ nav a {
       margin-top: 15px;
     }
     #about .avatar-info h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
     #about .link-icons {
       margin-top: 20px;
@@ -714,6 +792,111 @@ nav a {
     }
     #contacts .love-msg p {
       font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    .menu-links {
+      width: 70%;
+    }
+    .menu-links a {
+      font-size: 1rem;
+    }
+    #hero .container {
+      width: 95%;
+    }
+    #hero h1 {
+      font-size: 1.6rem;
+    }
+    #hero .description {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+    #hero a {
+      padding: 15px 35px;
+      font-size: 1em;
+    }
+    #projects .container {
+      width: 90%;
+    }
+    #projects .card-info h3 {
+      width: 100%;
+      font-size: 1.4rem;
+    }
+    #projects .card-info .btn {
+      font-size: 1.3rem;
+    }
+    #projects .card-skills {
+      font-size: 1.1rem;
+    }
+    #projects .card-skills-reverse {
+      font-size: 1.1rem;
+    }
+    #about .container {
+      width: 90%;
+    }
+    #about .avatar-info h2 {
+      font-size: 1.5rem;
+    }
+    #about .link-icons {
+      margin-top: 25px;
+      width: 300px;
+    }
+    #about .link-icons a {
+      width: 45px;
+      height: 45px;
+    }
+    #about h2 {
+      font-size: 1.5rem;
+    }
+    #about p,
+    #about span {
+      font-size: 20px;
+    }
+    #about .skills-block {
+      width: 100%;
+    }
+    #about .skills-lang {
+      justify-content: space-around;
+      width: 100%;
+    }
+    #about .skills-info {
+      width: 100%;
+    }
+    #about .skills-info h2{
+      width: 80%;
+    }
+    #contacts .container h2 {
+      font-size: 1.6rem;
+    }
+    #contacts .contact-form {
+      justify-content: center;
+      width: 265px;
+    }
+    #contacts input {
+      width: 100%;
+    }
+    #contacts textarea {
+      width: 100%;
+    }
+    #contacts ::placeholder {
+      font-size: 20px;
+    }
+    #contacts button {
+      padding: 15px 30px;
+    }
+    #contacts .contact-info {
+      padding: 0;
+    }
+    #contacts span,
+    #contacts p {
+      font-size: 15px;
+    }
+    #contacts .love-msg p {
+      font-size: 14px;
     }
   }
 }

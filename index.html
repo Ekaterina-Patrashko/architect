@@ -10,12 +10,17 @@
   <body>
     <header>
       <nav class="animate-on-scroll" data-delay="1800">
-        <img src="img/logo.svg" alt="Logo" />
-        <div class="buttons-nav">
+        <img src="img/logo.svg" alt="Logo"/>
+        <div id="burger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
           <a href="#home">Главная</a>
           <a href="#projects">Проекты</a>
           <a href="#about">Обо мне</a>
-          <a href="#last-project">Последний проект</a>
+          <!-- <a href="#last-project">Последний проект</a> -->
           <a href="#contacts">Связаться</a>
         </div>
       </nav>
@@ -75,7 +80,7 @@
             </div>
             <div class="card-info">
               <div class="more-btn">
-                <h3>Реконструкция района на бережковской набережной</h3>
+                <h3>Реконструкция «Бережковской набережной»</h3>
                 <a
                   href="/main/other projects/reconstruction-nab/reconstruction-nab.html"
                   target="_blank"
@@ -238,7 +243,7 @@
                   <h2 class="animate-on-scroll" data-delay="1800">Языки</h2>
                   <div class="animate-on-scroll" data-delay="1800">
                     <p>Русский</p>
-                    <p>Английский B1</p>
+                    <p>English B1</p>
                   </div>
                 </div>
               </div>
@@ -262,19 +267,15 @@
               <p><span>Email:</span> k.patrashko.katya@gmail.com</p>
               <p><span>Адрес:</span> Москва, Россия</p>
             </div>
-            <form class="contact-form animate-on-scroll" data-delay="600">
+            <form class="contact-form animate-on-scroll" data-delay="600" action="/send-message" method="POST">
               <label for="name">Имя</label>
-              <input type="text" id="name" placeholder="Ваше имя" required />
+              <input type="text" id="name" name="name" placeholder="Ваше имя" required />
               <label for="email">Email</label>
-              <input type="email" id="email" placeholder="Ваш email" required />
+              <input type="email" id="email" name="email" placeholder="Ваш email" required />
               <label for="message">Сообщение</label>
-              <textarea
-                id="message"
-                placeholder="Ваше сообщение"
-                required
-              ></textarea>
+              <textarea id="message" name="message" placeholder="Ваше сообщение" required></textarea>
               <button type="submit" class="btn">Отправить</button>
-            </form>
+            </form>      
           </div>
           <div class="love-msg">
             <p>Обязательно отвечу на все сообщения. Катя ❤️</p>
